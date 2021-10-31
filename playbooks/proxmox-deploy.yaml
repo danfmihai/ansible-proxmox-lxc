@@ -1,5 +1,5 @@
 - name: Create a LXC container on Proxmox
-  hosts: all
+  hosts: proxmox.lan
   tasks:
   - name: "Create the LXC container"
     proxmox:

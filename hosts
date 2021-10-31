@@ -1,0 +1,2 @@
+[proxmox]
+proxmox ansible_ssh_host=proxmox.lan ansible_port=30004
