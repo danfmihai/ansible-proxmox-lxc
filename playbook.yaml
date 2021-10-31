@@ -1,5 +1,5 @@
 - name: Create a LXC container on Proxmox
-  hosts: proxmox.lan
+  hosts: all
   tasks:
   - name: "Create the LXC container"
     proxmox:
@@ -12,7 +12,7 @@
       cores: "1"
       cpus: "2"
       memory: "2048"
-      description: "Testing Container"
+      description: "Testing Container created with ansible"
       disk: "20"
       ostemplate: "piso:vztmpl/ubuntu-20.04-standard_20.04-1_amd64.tar.gz"
       onboot: yes
@@ -20,4 +20,5 @@
       unprivileged: yes
       netif: '{"net0":"name=eth0,ip=dhcp,bridge=vmbr0"}'
       state: present
+      hostname: "bastion"
 
