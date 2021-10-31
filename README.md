@@ -1,2 +1,2 @@
-# packer-proxmox-template
-Will build a proxmox template from an ISO file
+# Ansible-proxmox-lxc
+Will build a proxmox lxc from with Ansible
