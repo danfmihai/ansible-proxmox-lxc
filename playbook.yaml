@@ -1,0 +1,23 @@
+- name: Create a LXC container on Proxmox
+  hosts: proxmox.lan
+  tasks:
+  - name: "Create the LXC container"
+    proxmox:
+      vmid: 300
+      api_token_secret: "9f5aac39-643f-418b-98e4-73c2cc5afe01"
+      api_token_id: "terraform@pam!new_token_id"
+      api_host: "proxmox.lan"
+      password: "passw0rd"
+      node: "proxmox"
+      cores: "1"
+      cpus: "2"
+      memory: "2048"
+      description: "Testing Container"
+      disk: "20"
+      ostemplate: "piso:vztmpl/ubuntu-20.04-standard_20.04-1_amd64.tar.gz"
+      onboot: yes
+      storage: "nvme"
+      unprivileged: yes
+      netif: '{"net0":"name=eth0,ip=dhcp,bridge=vmbr0"}'
+      state: present
+
